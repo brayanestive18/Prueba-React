@@ -9,7 +9,7 @@ function App() {
   const todoItems = todos.map((todo, i) => {
     return (
       <div className="col-md-4" key={i}>
-        <div className="card border-success mt-2 mb-2">
+        <div className="card border-success mt-4">
           <div className="card-header">
             <h3 className="text-dark">{todo.title}</h3>
           </div>
@@ -29,10 +29,20 @@ function App() {
   return (
     <div className="App">
       <Navigation titulo="Menú" size={todoItems.length} />
-      <TodoForm></TodoForm>
       <h1 className="App-title mt-2">Bienvenido Brayan</h1>
-      <div className="container ">
-        <div className="row mt-4">{todoItems}</div>
+      <div className="row">
+        <div className="col-md-2">
+          <div className="container ">
+            <div className="row">
+              <TodoForm></TodoForm>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-10">
+          <div className="container ">
+            <div className="row">{todoItems}</div>
+          </div>
+        </div>
       </div>
       <img src={logo} className="App-logo" alt="logo" />
     </div>
