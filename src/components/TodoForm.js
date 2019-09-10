@@ -17,14 +17,15 @@ function TodoForm() {
   });
 
   return (
-    <div className="card ml-4 mt-4">
+    <div className="card ml-3 mt-4 mr-3">
       <form className="card-body">
-        <h3 className="text-dark mt-4">Input data of new task</h3>
-        <div className="form-group mt-4">
+        <h3 className="text-dark mt-4 mb-4">Input data of new task</h3>
+        <div className="form-group">
           <label className="text-dark" htmlFor="title">
-            Task Title:
+            <h6>Task Title: </h6>
           </label>
           <input
+            className="form-control"
             type="text"
             name="title"
             id="title"
@@ -34,9 +35,10 @@ function TodoForm() {
         </div>
         <div className="form-group">
           <label className="text-dark" htmlFor="description">
-            Description:
+            <h6>Description: </h6>
           </label>
           <input
+            className="form-control"
             type="text"
             name="description"
             id="description"
@@ -46,9 +48,10 @@ function TodoForm() {
         </div>
         <div className="form-group">
           <label className="text-dark" htmlFor="responsible">
-            Responsible:
+            <h6>Responsible: </h6>
           </label>
           <input
+            className="form-control"
             type="text"
             name="responsible"
             id="responsible"
@@ -58,15 +61,15 @@ function TodoForm() {
         </div>
         <div className="form-group">
           <label className="text-dark" htmlFor="priority">
-            priority:
+            <h6>Priority: </h6>
           </label>
-          <select className="form-control form-control-lg">
+          <select className="form-control form-control-md" name='priority' onChange={handleInputChange}>
             <option>Low</option>
             <option>Medium</option>
             <option>High</option>
           </select>
+          <p className="text-dark">{JSON.stringify(todo)}</p>
         </div>
-        <p className="text-dark">{JSON.stringify(todo)}</p>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

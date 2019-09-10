@@ -8,7 +8,7 @@ import TodoForm from "./components/TodoForm";
 function App() {
   const todoItems = todos.map((todo, i) => {
     return (
-      <div className="col-md-4" key={i}>
+      <div className="col-sm-4" key={i}>
         <div className="card border-success mt-4">
           <div className="card-header">
             <h3 className="text-dark">{todo.title}</h3>
@@ -30,17 +30,15 @@ function App() {
     <div className="App">
       <Navigation titulo="Menú" size={todoItems.length} />
       <h1 className="App-title mt-2">Bienvenido Brayan</h1>
-      <div className="row">
-        <div className="col-md-2">
-          <div className="container ">
-            <div className="row">
-              <TodoForm></TodoForm>
-            </div>
+      <div>
+        <div className="row no-gutters">
+          <div className="col-auto">
+            <TodoForm></TodoForm>
           </div>
-        </div>
-        <div className="col-md-10">
-          <div className="container ">
-            <div className="row">{todoItems}</div>
+          <div className="col-auto">
+            <div className="container">
+              <div className="row">{todoItems}</div>
+            </div>
           </div>
         </div>
       </div>
